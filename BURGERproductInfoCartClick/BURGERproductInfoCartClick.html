@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="BURGERproductInfoCartClick.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    
+    <nav>
+        <div class="navContainer"> 
+            
+        <img src="images\LOGO 2.png" alt="Sip & Slice Logo">
+        <ul class="navFirst">
+            <li><a href="menu\menu.html">Menu</a></li>
+            <li><a href="catering\catering.html">Catering</a></li>
+            <li><a href="">Locations</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="about\about.html">About us</a></li>
+        </ul>
+        </div>
+        <ul class="navSec">
+            <li><a href="add to cart\addToCart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
+            <li><a href="login page\login.html"><i class="fa-regular fa-user"></i></a></li>
+        </ul>
+
+    </nav>
+
+
+
+    <main>
+        <section>
+            <div class="productInfoOuterContainer">
+                <div class="productInfoHalfDivs">
+                    <div class="productInfoimgContainer"><img src="images\burger2.jpg" id="productImgQTS"></div>
+                </div>
+
+                <div class="productInfoHalfDivs">
+                    <div class="productInfoinfoContainer">
+                        <h2 class="productName">BURGER</h2>
+                        <p class="productPrice">₹170</p>
+
+                        <p class="productIngrediants">Juicy, flavorful burger made with premium ingredients,
+                             perfectly cooked patty, topped with fresh vegetables.
+                        </p>
+
+                        <h4>REHEATING INSTRUCTIONS:</h4>
+                        <ul>
+                            <li>Wrap burger in foil and heat for 10-15 minutes, or until heated through.</li>
+                            <li> Place burger in a skillet over medium heat, covering with a lid.</li>
+                        </ul>
+
+                        <div class="qunt-select">
+                            <p>Quantity</p>
+                            <input type="number" name="quantity" value="1" id="qunt-select">
+                        </div>
+
+                        <a class="productAddtocartbtn" href="add to cart\addToCart.html">Add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+    <hr>
+    <footer>
+        <div class="footerContainer">
+
+            <div class="storeInfo">
+                <h2 class="footerDivHeadings">Store Address</h2>
+                <p class="footerDivDetail">1415 Folsom Street, San Francisco Ca, 94103 <br>
+
+                    539 Valencia Street, San Francisco Ca, 94110 <br>
+                    
+                    415-355-1415 <br>
+                    
+                    info@sextantcoffee.com 
+                </p>
+                <ul class="socialMedia">
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="quickLinksContainer">
+                <h2 class="footerDivHeadings">Quick Links</h2>
+                <ul class="quickLinksDiv">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="newsLetterContainer">
+                <h2 class="footerDivHeadings">Newsletter</h2>
+                <p class="footerDivDetail">Sign up for exclusive offers, original stories,<br>
+                     activism awareness, events and more.
+                </p>
+                <div class="inputcont">
+                    <input type="email" placeholder="Enter email">
+                    <button id="emailEnter"><i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+                
+                <ul class="socialMedia">
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li class="socialIcon"><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script >
+
+        const addToCartBtn = document.querySelector('.productAddtocartbtn');
+        addToCartBtn.addEventListener('click', addToCart);
+
+        function addToCart() {
+        const productName = document.querySelector('.productName').innerText;
+        const productPrice = parseFloat(document.querySelector('.productPrice').innerText.replace('₹', ''));
+        const productImage = document.querySelector('.productInfoimgContainer img').src;
+        const quantity = parseInt(document.querySelector('#qunt-select').value);
+
+        const product = {
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: quantity
+        };
+
+        addProductToCart(product);
+        }
+
+        function addProductToCart(product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        window.location.href = 'addToCart.html';
+        }
+
+
+    </script>
+</body>
+</html>

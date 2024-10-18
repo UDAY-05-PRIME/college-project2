@@ -1,0 +1,438 @@
+     
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+
+    
+}
+
+nav{
+    height: 90px;
+    background-color: rgba(255, 255, 255,0.93);
+    width: 100%;
+    padding: 15px 15px 15px 15px;
+
+
+    box-shadow: 0 0 10px rgba(20, 20, 20,0.2);
+
+    display: flex;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+
+}
+
+.navContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.navContainer img{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+nav p{
+    height: 100%;
+    width: 60px;
+}
+
+nav .navFirst{
+    margin-top: 15px;
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+}
+nav .navFirst li{
+    display: inline-block;
+
+    font-size: 19px;
+    font-weight: 550;
+    /* font-family: "Montserrat"; */
+    cursor: pointer;
+
+    margin-right: 30px;
+
+    position: relative;
+}
+
+nav .navFirst li a{
+    /* font-family: "Montserrat"; */
+    font-family: inherit;
+    text-decoration: none;
+
+    /* color: rgb(34, 39, 46); */
+    color: rgb(55, 62, 71);
+}
+
+nav .navFirst li::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+
+    /* background-color: rgb(34, 39, 46); */
+    background-color: rgb(55, 62, 71);
+
+    position: absolute;
+    bottom: 17px;
+    left: 0px;
+
+    transition: 0.25s;
+}
+nav .navFirst li:hover::after{
+    width: 100%;
+}
+
+nav .navSec{
+    margin-top: 15px;
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+}
+nav .navSec li{
+    display: inline-block;
+
+    /* color: rgb(34, 39, 46); */
+    color: rgb(55, 62, 71);
+
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 2px;
+
+    margin-right: 20px;
+
+    transition: 0.2s;
+}
+nav .navSec li a{
+    text-decoration: none;
+
+    color: rgb(34, 39, 46);
+}
+
+nav .navSec li:hover{
+    scale: 1.1;
+}
+
+
+
+
+
+
+
+
+
+.cart-container {
+    padding: 30px;
+
+}
+
+.cart-container h2{
+    margin-bottom: 30px;
+}
+
+
+.cart-container p{
+    /* display: none;  */
+    font-weight: 550; 
+    font-family: 'Josefin Sans';
+    font-size: 35px;
+    margin: 100px 0px 100px 500px;
+}
+
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-item-details > div {
+    flex: 1;
+}
+
+.cart-item-details h3 {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+.remove-btn {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-btn:hover {
+    background-color: #ff1a1a;
+}
+
+
+
+
+/*  footer   */
+.footerContainer{
+    padding: 85px 75px 75px 75px ;
+    /* background-color: aqua; */
+    /* background-color: #f8f5ed; */
+    /* background: linear-gradient(45deg,rgb(237, 196, 179),rgb(230, 184, 162),rgb(237, 196, 179));  */
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerDivHeadings{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Nunito Sans, sans-serif;
+
+    margin-bottom: 15px;
+}
+
+.footerDivDetail{
+    font: 16px;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 0.75);
+    font-family: Nunito Sans, sans-serif;
+
+    line-height: 35px;
+
+    margin-bottom: 15px;
+}
+
+.socialMedia{
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+}
+.socialMedia .socialIcon{
+    height: 40px;
+    width: 40px;
+    border-radius: 12px;
+    /* background-color: red; */
+    
+
+    margin-right: 10px;
+}
+.socialMedia .socialIcon a{
+    font-size: 25px;
+    color: rgba(18, 18, 18, 0.75);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.quickLinksDiv{
+    list-style: none;
+}
+.quickLinksDiv li{
+    /* text-decoration: none; */
+    color: rgba(18, 18, 18, 0.75);
+    font: 14px;
+    font-weight: 500;
+    font-family: Nunito Sans, sans-serif;
+    line-height: 30px;
+}
+.quickLinksDiv li a{
+    text-decoration: none;
+    
+    color: rgba(18, 18, 18, 0.75);
+    cursor: pointer;
+}
+
+
+
+.newsLetterContainer .inputcont{
+    height: auto;
+    width: 100%;
+    margin-bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+.inputcont::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.newsLetterContainer input{
+    background-color: transparent;
+    width: 80%;
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Nunito Sans, sans-serif;
+    border: none;
+    outline: none;
+}
+.newsLetterContainer input::placeholder{
+    color: black;
+    font-family: Nunito Sans, sans-serif;
+}
+
+.newsLetterContainer button{
+    outline: none;
+    border: none;
+    width: 10%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.newsLetterContainer button i{
+    color: rgba(18, 18, 18, 0.75);
+    font-size: 26px;
+}
+
+
+/*  footer   */
+.footerContainer{
+    padding: 85px 75px 75px 75px ;
+    /* background-color: aqua; */
+    /* background-color: #f8f5ed; */
+    /* background: linear-gradient(45deg,rgb(237, 196, 179),rgb(230, 184, 162),rgb(237, 196, 179));  */
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerDivHeadings{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Nunito Sans, sans-serif;
+
+    margin-bottom: 15px;
+}
+
+.footerDivDetail{
+    font: 16px;
+    font-weight: 500;
+    color: rgba(18, 18, 18, 0.75);
+    font-family: Nunito Sans, sans-serif;
+
+    line-height: 35px;
+
+    margin-bottom: 15px;
+}
+
+.socialMedia{
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+}
+.socialMedia .socialIcon{
+    height: 40px;
+    width: 40px;
+    border-radius: 12px;
+    /* background-color: red; */
+    
+
+    margin-right: 10px;
+}
+.socialMedia .socialIcon a{
+    font-size: 25px;
+    color: rgba(18, 18, 18, 0.75);
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.quickLinksDiv{
+    list-style: none;
+}
+.quickLinksDiv li{
+    /* text-decoration: none; */
+    color: rgba(18, 18, 18, 0.75);
+    font: 14px;
+    font-weight: 500;
+    font-family: Nunito Sans, sans-serif;
+    line-height: 30px;
+}
+.quickLinksDiv li a{
+    text-decoration: none;
+    
+    color: rgba(18, 18, 18, 0.75);
+    cursor: pointer;
+}
+
+
+
+.newsLetterContainer .inputcont{
+    height: auto;
+    width: 100%;
+    margin-bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+.inputcont::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.newsLetterContainer input{
+    background-color: transparent;
+    width: 80%;
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Nunito Sans, sans-serif;
+    border: none;
+    outline: none;
+}
+.newsLetterContainer input::placeholder{
+    color: black;
+    font-family: Nunito Sans, sans-serif;
+}
+
+.newsLetterContainer button{
+    outline: none;
+    border: none;
+    width: 10%;
+    background-color: transparent;
+    cursor: pointer;
+}
+.newsLetterContainer button i{
+    color: rgba(18, 18, 18, 0.75);
+    font-size: 26px;
+}
+
